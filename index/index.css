@@ -44,7 +44,10 @@ h1{
 .welcome {
 	display: block;
 	width: 500px;
+	height: 120px;
 	margin: 0 auto 20px;
+	background: url(./time.png) no-repeat;
+	background-size: cover;
 }
 .name {
 	position: relative;
