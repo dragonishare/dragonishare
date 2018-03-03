@@ -10,6 +10,34 @@
 	<link rel="stylesheet" href="./index/jquery.fullPage.css">
 	<link rel="stylesheet" href="./index/index.css">
 	<link rel="stylesheet" href="./index/animate.css">
+	<script src="./index/jquery.min.js"></script>
+	<script src="./index/jquery-ui.min.js"></script>
+	<script src="./index/scrolloverflow.min.js"></script>
+	<script src="./index/jquery.fullPage.js"></script>
+	<script src="./index/jquery.lettering.js"></script>
+	<script src="./index/jquery.textillate.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#fullpage').fullpage({
+				verticalCentered: false,
+				navigation: true,
+				// sectionsColor: ['#254875', '#0798ec', '#254587', '#695684'],
+				anchors: ['textillate','a','b','c'],
+
+				//to avoid problems with css3 transforms and fixed elements in Chrome, as detailed here: https://github.com/alvarotrigo/fullPage.js/issues/208
+				css3:false,
+				afterLoad: function(anchorLink, index) {
+					if(index == 2) {
+						$('.textillate').textillate({in: { effect: 'rollIn' }});
+						$('.desc .txt').textillate({
+							// initialDelay: 1000, 	//设置动画开始时间
+							in: {effect: 'flipInX'}	//设置动画名称
+						});
+					}
+				}
+			});
+		});
+	</script>
 </head>
 <body>
 <div id="fullpage">
@@ -30,33 +58,5 @@
 		<h1 class="demo">Demo</h1>
 	</div>
 </div>
-<script src="./index/jquery.min.js"></script>
-<script src="./index/jquery-ui.min.js"></script>
-<script src="./index/scrolloverflow.min.js"></script>
-<script src="./index/jquery.fullPage.js"></script>
-<script src="./index/jquery.lettering.js"></script>
-<script src="./index/jquery.textillate.js"></script>
-<script type="text/javascript">
-	$(document).ready(function() {
-		$('#fullpage').fullpage({
-			verticalCentered: false,
-			navigation: true,
-			// sectionsColor: ['#254875', '#0798ec', '#254587', '#695684'],
-			anchors: ['textillate','a','b','c'],
-
-			//to avoid problems with css3 transforms and fixed elements in Chrome, as detailed here: https://github.com/alvarotrigo/fullPage.js/issues/208
-			css3:false,
-			afterLoad: function(anchorLink, index) {
-				if(index == 2) {
-					$('.textillate').textillate({in: { effect: 'rollIn' }});
-					$('.desc .txt').textillate({
-						// initialDelay: 1000, 	//设置动画开始时间
-						in: {effect: 'flipInX'}	//设置动画名称
-					});
-				}
-			}
-		});
-	});
-</script>
 </body>
 </html>
