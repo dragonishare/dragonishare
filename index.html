@@ -6,81 +6,57 @@
 	<meta name="author" content="dragonishare">
 	<meta name="description" content="jQuery特效、CSS3动画、JavaScript、HTML5">
 	<meta name="keywords"  content="jQuery特效、CSS3动画、JavaScript、HTML5">
+	<link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
 	<link rel="stylesheet" href="./index/jquery.fullPage.css">
-	<link rel="stylesheet" type="text/css" href="examples.css" />
-	<style>
-
-	/* Style for our header texts
-	* --------------------------------------- */
-	h1{
-		font-size: 5em;
-		font-family: arial,helvetica;
-		color: #fff;
-		margin:0;
-		padding:0;
-	}
-
-	/* Centered texts in each section
-	* --------------------------------------- */
-	.section{
-		text-align:center;
-	}
-
-	/* Backgrounds will cover all the section
-	* --------------------------------------- */
-	#section0,
-	#section1,
-	#section2,
-	#section3{
-		background-size: cover;
-		background-attachment: fixed;
-	}
-
-	/* Defining each sectino background and styles
-	* --------------------------------------- */
-	#section0{
-		background-color: rgb(27, 188, 155);
-	}
-	#section0 h1{
-		top: 50%;
-		transform: translateY(-50%);
-		position: relative;
-	}
-	#section1 {
-		background-color: #0798ec;
-	}
-	#section2{
-		background-color: rgb(75, 191, 195);
-	}
-	#section3{
-		background-color: rgb(123, 170, 190);
-	}
-	#section3 h1{
-		color: #000;
-	}
-	</style>
-	<script src="./index/jquery.min.js"></script>
-	<script src="./index/jquery-ui.min.js"></script>
-	<script src="./index/scrolloverflow.min.js"></script>
-	<script src="./index/jquery.fullPage.js"></script>
-	<script type="text/javascript">
-		$(document).ready(function() {
-			$('#fullpage').fullpage({
-				verticalCentered: false,
-				navigation: true,
-
-				//to avoid problems with css3 transforms and fixed elements in Chrome, as detailed here: https://github.com/alvarotrigo/fullPage.js/issues/208
-				css3:false
-			});
-		});
-	</script>
+	<link rel="stylesheet" href="./index/index.css">
+	<link rel="stylesheet" href="./index/animate.css">
 </head>
 <body>
 <div id="fullpage">
-	<div class="section " id="section0"><h1>fullPage.js</h1></div>
-	<div class="section" id="section1"><h1>第二屏</h1></div>
-	<div class="section" id="section2"><h1>Lovely images <br />for a lovely page</h1></div>
-	<div class="section" id="section3"><h1>One Image = One thousand words</h1></div>
+	<div class="section" id="section_index" data-anchor="index">
+		<img class="welcome" src="./index/time.png" alt="welcome">
+		<h1 class="name">古德耐<a class="author" href="https://github.com/dragonishare">- dragonishare</a></h1>
+	</div>
+	<div class="section" id="section_textillate" data-anchor="textillate">
+		<h1 class="textillate">About</h1>
+		<div class="desc">
+			<p class="txt">说点什么呢？这个小站可能主要整理一些自己感兴趣的前端特效（jQuery，CSS3，canvas，svg等）；整理常用的小功能；记录读书笔记和自己的一些思考；差不多就这样～</p>
+		</div>
+	</div>
+	<div class="section" id="section_book" data-anchor="book">
+		<h1 class="book">Note</h1>
+	</div>
+	<div class="section" id="section_demo" data-anchor="demo">
+		<h1 class="demo">Demo</h1>
+	</div>
 </div>
+<script src="./index/jquery.min.js"></script>
+<script src="./index/jquery-ui.min.js"></script>
+<script src="./index/scrolloverflow.min.js"></script>
+<script src="./index/jquery.fullPage.js"></script>
+<script src="./index/jquery.lettering.js"></script>
+<script src="./index/jquery.textillate.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('#fullpage').fullpage({
+			verticalCentered: false,
+			navigation: true,
+			// sectionsColor: ['#254875', '#0798ec', '#254587', '#695684'],
+			anchors: ['textillate','a','b','c'],
+
+			//to avoid problems with css3 transforms and fixed elements in Chrome, as detailed here: https://github.com/alvarotrigo/fullPage.js/issues/208
+			css3:false,
+			afterLoad: function(anchorLink, index) {
+				if(index == 2) {
+					$('.textillate').textillate({in: { effect: 'rollIn' }});
+					$('.desc .txt').textillate({
+						// initialDelay: 1000, 	//设置动画开始时间
+						in: {effect: 'flipInX'}	//设置动画名称
+					});
+				}
+			}
+		});
+	});
+</script>
 </body>
 </html>

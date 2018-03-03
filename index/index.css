@@ -1,0 +1,93 @@
+@charset "utf-8";
+/* Reset CSS*/
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,
+form,input,textarea,p {
+    padding: 0;
+    margin: 0;
+}
+a{
+	text-decoration:none;
+}
+ol,ul {
+    list-style: none;
+}
+h1,h2,h3,h4,h5,h6 {
+    font-weight: normal;
+    font-size: 100%;
+    color:#444;
+}
+/* Custom CSS
+ * --------------------------------------- */
+body{
+	font-family: arial,helvetica;
+	color: rgba(0,0,0,0.5);
+}
+h1{
+	font-size: 100px;
+	font-family: arial,helvetica;
+	color: #fff;
+}
+#fp-nav ul li a span,
+.fp-slidesNav ul li a span {
+	background: #fff;
+}
+.section{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+/*默认第一屏*/
+#section_index {
+	background-color: rgb(27, 188, 155);
+}
+.welcome {
+	display: block;
+	width: 500px;
+	margin: 0 auto 20px;
+}
+.name {
+	position: relative;
+	font-size: 90px;
+	font-family: arial,helvetica;
+	color: #fff;
+}
+.name .author {
+	position: absolute;
+	right: -180px;
+	bottom: 0px;
+	font-size: 25px;
+	font-family: Helvetica;
+	color: #fff;
+}
+.name .author:hover {
+	text-decoration: underline;
+}
+/*book*/
+#section_book {
+	background-color: rgb(75, 191, 195);
+}
+.book,
+.demo {
+	font-size: 120px;
+}
+#section_demo {
+	background-color: rgb(123, 170, 190);
+}
+/*动态打字效果textillate*/
+#section_textillate {
+	justify-content: flex-start;
+	background-color: #0798ec;
+	background-color: #242424;
+}
+/*.text1,.text2 {visibility:hidden;}*/
+.textillate {
+	margin: 100px auto 50px;
+}
+.desc .txt {
+	margin: 0 50px;
+	line-height: 24px;
+	font-family: "Microsoft Yahei",Helvetica;
+	font-size: 16px;
+	color:#fff;
+}
