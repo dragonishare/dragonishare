@@ -2,9 +2,85 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Hello World</title>
+	<title>古德耐</title>
+	<meta name="author" content="dragonishare">
+	<meta name="description" content="jQuery特效、CSS3动画、JavaScript、HTML5">
+	<meta name="keywords"  content="jQuery特效、CSS3动画、JavaScript、HTML5">
+	<link rel="stylesheet" href="./index/jquery.fullPage.css">
+	<link rel="stylesheet" type="text/css" href="examples.css" />
+	<style>
+
+	/* Style for our header texts
+	* --------------------------------------- */
+	h1{
+		font-size: 5em;
+		font-family: arial,helvetica;
+		color: #fff;
+		margin:0;
+		padding:0;
+	}
+
+	/* Centered texts in each section
+	* --------------------------------------- */
+	.section{
+		text-align:center;
+	}
+
+	/* Backgrounds will cover all the section
+	* --------------------------------------- */
+	#section0,
+	#section1,
+	#section2,
+	#section3{
+		background-size: cover;
+		background-attachment: fixed;
+	}
+
+	/* Defining each sectino background and styles
+	* --------------------------------------- */
+	#section0{
+		background-color: rgb(27, 188, 155);
+	}
+	#section0 h1{
+		top: 50%;
+		transform: translateY(-50%);
+		position: relative;
+	}
+	#section1 {
+		background-color: #0798ec;
+	}
+	#section2{
+		background-color: rgb(75, 191, 195);
+	}
+	#section3{
+		background-color: rgb(123, 170, 190);
+	}
+	#section3 h1{
+		color: #000;
+	}
+	</style>
+	<script src="./index/jquery.min.js"></script>
+	<script src="./index/jquery-ui.min.js"></script>
+	<script src="./index/scrolloverflow.min.js"></script>
+	<script src="./index/jquery.fullPage.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#fullpage').fullpage({
+				verticalCentered: false,
+				navigation: true,
+
+				//to avoid problems with css3 transforms and fixed elements in Chrome, as detailed here: https://github.com/alvarotrigo/fullPage.js/issues/208
+				css3:false
+			});
+		});
+	</script>
 </head>
 <body>
-	
+<div id="fullpage">
+	<div class="section " id="section0"><h1>fullPage.js</h1></div>
+	<div class="section" id="section1"><h1>第二屏</h1></div>
+	<div class="section" id="section2"><h1>Lovely images <br />for a lovely page</h1></div>
+	<div class="section" id="section3"><h1>One Image = One thousand words</h1></div>
+</div>
 </body>
 </html>
