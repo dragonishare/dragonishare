@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title>邀请好友开通SVIP颁成长大礼</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<div class="wrapper owner">
+    <!-- 头图 -->
+    <section class="box-top">
+        <img class="top-img" src="./img/top_owner.jpg" alt="邀请好友开通SVIP颁成长大礼">
+        <a class="rule-btn" href="javascript:;" title="活动规则">活动规则</a>
+        <div class="tips">
+            <a class="invite-btn" href="javascript:;" title="分享页面 邀请好友>>">分享页面 邀请好友</a>
+            <div class="txt">已成功开通SVIP好友数量：<span>123</span></div>
+            <div class="txt2">（本活动仅限SVIP用户参与）</div>
+        </div>
+    </section>
+    <!-- 邀请好友，领成长礼包 -->
+    <section class="box-gift-bag">
+        <!-- 已领取a.gift-btn-m-o,未领取gift-btn-m -->
+        <div class="gift-btn-m-group">
+            <a class="gift-btn-m-o" href="javascript:;">已领取</a>
+            <a class="gift-btn-m" href="javascript:;">领取礼包</a>
+            <a class="gift-btn-m" href="javascript:;">领取礼包</a>
+        </div>
+    </section>
+    <!-- 版本声明 -->
+    <footer class="copyright">
+    腾讯公司保留在法律规定范围内对上述规则进行解释的权利</footer>
+</div>
+<!-- 活动规则弹窗 -->
+<div id="dialog_rule" class="dialog">
+    <div class="dialog-wrap">
+        <a class="close-btn" href="javascript:;">关闭</a>
+        <div class="dialog-inner">
+            <div class="rule-title">活动规则</div>
+            <div class="rule-content">
+                <ul class="rule-list">
+                    <li>
+                        1、活动时间：2018年4月11日00:00-2018年12月31日23:59；
+                    </li>
+                    <li>
+                        2、活动期间，超级会员用户可以在本页面邀请好友开通超级会员。
+                    </li>
+                    <li>
+                        3、当被邀请好友开通超级会员后，会被纪录成为你已成功邀请好友，当已成功邀请好友数量满足对应人数，即可获得对应礼包。对应礼包详情如下：
+                        <p>（1） 成功邀请一名好友开通超级会员可获得20成长值（SVIP6及以上用户可获得双倍奖励）；</p>
+                        <p>（2） 成功邀请三名好友开通超级会员可获得60成长值（SVIP6及以上用户可获得双倍奖励）；</p>
+                        <p>（3） 成功邀请十名好友开通超级会员可获得100成长值以及一张7天成长加倍卡（SVIP6及以上用户可获得双倍奖励）；</p>
+                    </li>
+                    <li>
+                        4、被邀请用户在开通页面开通任意月份超级会员可获得开通大礼包一份，礼包详情包括：
+                        <p>（1）两个月红钻以及鹅漫U品满5减5优惠券（其中鹅漫U品优惠券全场通用，领取后7天内有效，详情请前往<a id="emanJump" href="javascript:;">鹅漫优品商城</a>）</p>
+                        <p>（2）二选一礼包：用户可选择7天SVIP+QQ音乐会员或者7天SVIP+腾讯视频会员，领取其中一个后，不可领取另外一个礼包。</p>
+                    </li>
+                    <li>
+                        5、腾讯公司保留在法律规定的范围内对本次活动解释的权利。
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 领取礼包 -->
+<div id="dialog_gift" class="dialog">
+    <div class="dialog-wrap">
+        <div class="dialog-inner">
+            <!-- 领取礼包成功时，显示div.gift-success -->
+            <div class="gift-success hide">
+                <div class="txt">恭喜你成功领取到XXX</div>
+                <a class="confirm-btn" href="javascript:;" title="确定">确定</a>
+            </div>
+            <!-- 还没开通会员时，显示div.gift-tips -->
+            <div class="gift-tips hide">
+                <div class="txt">
+                    <p>对不起，你现在还没有领取资格</p>
+                    <p>快去开通年费超级会员吧</p>
+                </div>
+                <a class="vip-btn-link" href="javascript:;" title="立即开通>>>">立即开通></a>
+                <a class="close-btn" href="javascript:;">关闭</a>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+// 通过js适配不同的屏幕大小
+(function (doc, win) {
+  var docEl = doc.documentElement,
+    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+    recalc = function () {
+      var clientWidth = docEl.clientWidth;
+      if (!clientWidth) return;
+
+      // 根据设备的比例调整初始font-size大小
+      docEl.style.fontSize = 50 * (clientWidth / 375) + 'px';
+    };
+
+  if (!doc.addEventListener) return;
+  win.addEventListener(resizeEvt, recalc, false);
+  doc.addEventListener('DOMContentLoaded', recalc, false);
+})(document, window);
+</script>
+<script src="http://i.gtimg.cn/vipstyle/frozenjs/lib/zepto.min.js?_bid=304"></script>
+<script>
+$(function(){
+    // 关闭弹窗
+    $(".close-btn, #dialog_gift .confirm-btn").click(function(){
+        $("body").removeClass("mask");
+        $(this).closest('.dialog').removeClass("bganimation");
+    });
+    // 打开活动规则弹窗
+    $(".rule-btn").click(function() {
+        $("body").addClass("mask");
+        $("#dialog_rule").addClass("bganimation");
+    });
+    // 领取礼包
+    $(".gift-btn, .gift-btn-s, .gift-btn-m").click(function() {
+        $("body").addClass("mask");
+        $("#dialog_gift").addClass("bganimation");
+        var flag = 0;//是否开通，默认0: 未开通
+        if(!flag) {
+            $(".gift-tips").removeClass('hide');
+        } else {
+            $(".gift-success").removeClass('hide');
+        }
+    });
+})
+</script>
+</body>
+</html>
