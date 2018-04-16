@@ -193,7 +193,9 @@ li {
 #dialog_gift .dialog-wrap .close-btn {
   bottom: -0.32rem;
 }
-.mask {
+.mask,
+.mask .wrapper {
+  height: 100%;
   overflow: hidden;
 }
 .bganimation {
