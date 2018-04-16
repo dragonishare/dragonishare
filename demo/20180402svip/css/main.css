@@ -265,7 +265,7 @@ li {
 .box-top .tips .invitername {
   display: inline-block;
   text-align: left;
-  vertical-align: top;
+  vertical-align: bottom;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
