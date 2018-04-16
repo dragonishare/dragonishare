@@ -46,11 +46,13 @@ html {
   font-size: 50px;
   /*50px=1rem*/
   -webkit-text-size-adjust: none;
+  height: 100%;
 }
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", 'Myriad Pro', "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", STHeiti STXihei, Microsoft JhengHei, sans-serif;
   -webkit-user-select: none;
   user-select: none;
+  height: 100%;
 }
 a {
   text-decoration: none;
