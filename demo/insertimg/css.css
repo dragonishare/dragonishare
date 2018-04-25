@@ -1,0 +1,76 @@
+@charset 'utf-8';
+
+html,body,div,span,a,p,img {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    display: block;
+}
+
+html,body,.wrapper {
+    height: 100%;
+    font-family: 'Helvetica Neue', Helvetica, sans-serif;
+    font-size: 14px;
+    color: #ed7b2c;
+    background: #f7f7f9;
+}
+.wrapper {
+    display: flex;
+    flex-direction: column;
+}
+.wrapper .content {
+    flex: 1;
+    overflow: auto;
+    height: 100%;
+}
+.content .imglist {
+    height: 100%;
+}
+.content .imglist img {
+    max-width: 100%;
+    max-height: 100%;
+}
+.imglist img.hide {
+    display: none;
+}
+.wrapper .footer {
+    flex: none;
+    height: 104px;
+    padding: 0 20px;
+}
+.footer .current-page {
+    height: 34px;
+    line-height: 34px;
+    font-size: 14px;
+    color: #ed7b2c;
+}
+.footer .current-page .text {
+    text-transform: capitalize;
+}
+.btn-groups {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+.btn-groups .last-btn,
+.btn-groups .next-btn {
+    font-size: 0;
+    width: 98px;
+    height: 40px;
+}
+.btn-groups .last-btn {
+    background: url(./img/last_page.png) no-repeat center;
+    background-size: contain;
+}
+.btn-groups .next-btn {
+    background: url(./img/next_page.png) no-repeat center;
+    background-size: contain;
+}
+.btn-groups .current-page-num {
+    color: #333;
+}
+

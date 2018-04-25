@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>批量插入图片</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="stylesheet" type="text/css" href="./css.css">
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="content">
+                <div class="imglist">
+                </div>
+            </div>
+            <div class="footer">
+                <div class="current-page">
+                    <span class="num"></span>
+                    <span class="text"></span>
+                </div>
+                <div class="btn-groups">
+                    <span class="last-btn">last page</span>
+                    <div class="pages">
+                        <span class="current-page-num"></span>/
+                        <span class="page-total"></span>
+                    </div>
+                    <span class="next-btn">next page</span>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="./js.js"></script>
+        <script type="text/javascript">
+            window.onload = function () {
+                var imgObjInit = {
+                    imglistStr: '',
+                    pageNum: 1,
+                    url: './img/',
+                    subUrl: 'pic',
+                    total: 4
+                }
+
+                init(imgObjInit);
+            }
+        </script>
+    </body>
+</html>
