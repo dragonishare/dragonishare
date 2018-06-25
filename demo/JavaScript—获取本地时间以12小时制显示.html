@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>获取时间</title>
+    <script type="text/javascript">
+        function shijian() {
+            var today = new Date();
+            var hh = today.getHours();
+            var mm = today.getMinutes();
+            var ss = today.getSeconds();
+            var day = today.getDay();
+            var date = today.getDate();
+            var year = today.getFullYear();
+            var month = today.getMonth() + 1;
+
+            /*声明一个变量来接收转换成字符串*/
+
+            var dayday;
+
+            /*用switch完成转换操作*/
+            switch (day) {
+                case 1:
+                    dayday = "一";
+                    break;
+                case 2:
+                    dayday = "二";
+                    break;
+                case 3:
+                    dayday = "三";
+                    break;
+                case 4:
+                    dayday = "四";
+                    break;
+                case 5:
+                    dayday = "五";
+                    break;
+                case 6:
+                    dayday = "六";
+                    break;
+                case 7:
+                    dayday = "日";
+                    break;
+            }
+
+            /*声明AM和PM分别代表上午和下午，因为时间设置为12小时制，从用户角度出发，提供便利*/
+
+            var apm = "PM";
+            var abm = "AM";
+
+            /*从系统获取的时间为24小时制，我们减去12就可以转换成12小时制*/
+
+            if (hh > 12) {
+                var num = hh - 12;
+                document.getElementById("abc").innerHTML = "现在的系统时间:" + "<br/><br/>" + year + "年" + month + "月" + date + "日"
+                    + num + "时" + mm + "分" + ss + "秒" + "&nbsp;" + "星期" + dayday + "&nbsp;" + "&nbsp;" + apm + "<br/><br/>" + "下午好！";
+            } else {
+                document.getElementById("abc").innerHTML = "现在的系统时间:" + "<br/><br/>" + year + "年" + month + "月" + date + "日"
+                    + hh + "时" + mm + "分" + ss + "秒" + "&nbsp;" + "星期" + dayday + "&nbsp;" + "&nbsp;" + abm + "<br/><br/>" + "下午好！欢迎来到TB128！";
+            }
+        }
+
+        /*每1000毫秒(1秒)执行一次shijian()方法*/
+
+        setInterval("shijian()", 1000)
+    </script>
+</head>
+<body>
+<div id="abc">
+    <input type="button" value="查看系统时间" onclick="shijian()">
+</div>
+</body>
+</html>
